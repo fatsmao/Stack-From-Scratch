@@ -1,3 +1,7 @@
+/* Big O Notation
+O(n) - Linear
+* */
+
 public class MyStack {
     // implement stack using an array
     private int capacity;
@@ -11,7 +15,7 @@ public class MyStack {
     }
 
     void push(int element) {
-        //point to the top element
+
         if (!this.isFull()) {
             System.out.println("Inserting element: " + element + " into the stack");
             this.currentTopIndex = this.currentTopIndex + 1;
@@ -59,8 +63,12 @@ public class MyStack {
     void expandArray(){
         capacity *= 2;
         int[] newArray = new int[capacity];
-        for (int i = 0; i < array.length; i++)
+
+        System.arraycopy(array, 0, newArray, 0, array.length);
+       /* for (int i = 0; i < array.length; i++) {
             newArray[i] = array[i];
+        } */
+
         array = newArray;
     }
 }
